@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/tinman6/flight2event/issues"
   },
-  "homepage": "https://github.com/tinman6/flight2event#readme"
+  "homepage": "https://github.com/tinman6/flight2event#readme",
+  "dependencies": {
+    "ics": "2.16.0"
+  }
 }
