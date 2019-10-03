@@ -1,0 +1,487 @@
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns="http://wadl.dev.java.net/2009/02">
+    <doc xmlns:jersey="http://jersey.java.net/" jersey:generatedBy="Jersey: 1.12 02/15/2012 05:30 PM"/>
+    <grammars>
+        <include href="scheduledFlightsService.xsd">
+            <doc title="Generated" xml:lang="en"/>
+        </include>
+    </grammars>
+    <resources base="https://api.flightstats.com/flex/schedules/rest/">
+        <resource path="/resources">
+            <method id="getAllApis" name="GET">
+                <response>
+                    <representation mediaType="application/json; charset=UTF-8"/>
+                    <representation mediaType="application/xml; charset=UTF-8"/>
+                </response>
+            </method>
+        </resource>
+        <resource path="/v1/jsonp">
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/x-javascript; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/v1/xml">
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/v1/json">
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/v1">
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="hourOfDay" style="template" type="xs:int"/>
+                <method id="byZAirport_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="arrivalAirportCode" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="departureAirportCode" style="template" type="xs:string"/>
+                <method id="byRoute_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Arriving" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+            <resource path="/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}">
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="month" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="carrier" style="template" type="xs:string"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="year" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="day" style="template" type="xs:int"/>
+                <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="flightnumber" style="template" type="xs:string"/>
+                <method id="byFlight_Departing" name="GET">
+                    <request>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appId" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="appKey" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="codeType" style="query" type="xs:string"/>
+                        <param xmlns:xs="http://www.w3.org/2001/XMLSchema" name="extendedOptions" style="query" type="xs:string"/>
+                    </request>
+                    <response>
+                        <representation mediaType="application/xml; charset=UTF-8"/>
+                        <representation mediaType="application/json; charset=UTF-8"/>
+                    </response>
+                </method>
+            </resource>
+        </resource>
+        <resource path="/resources.json">
+            <method id="getAllApis" name="GET">
+                <response>
+                    <representation mediaType="application/json"/>
+                </response>
+            </method>
+        </resource>
+        <resource path="/resources.xml">
+            <method id="getAllApis" name="GET">
+                <response>
+                    <representation mediaType="application/xml"/>
+                </response>
+            </method>
+        </resource>
+        <resource path="/resources/v1">
+            <method id="getHelp" name="GET">
+                <response>
+                    <representation mediaType="application/json; charset=UTF-8"/>
+                </response>
+            </method>
+        </resource>
+    </resources>
+</application>

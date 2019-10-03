@@ -1,0 +1,2202 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "servers": [
+    {
+      "url": "https://api.flightstats.com/flex/schedules/rest/"
+    }
+  ],
+  "paths": {
+    "/resources": {
+      "parameters": [],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getAllApis"
+      }
+    },
+    "/resources.json": {
+      "parameters": [],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getAllApis"
+      }
+    },
+    "/resources.xml": {
+      "parameters": [],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getAllApis"
+      }
+    },
+    "/resources/v1": {
+      "parameters": [],
+      "get": {
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "getHelp"
+      }
+    },
+    "/v1/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Arriving"
+      }
+    },
+    "/v1/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Departing"
+      }
+    },
+    "/v1/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Departing"
+      }
+    },
+    "/v1/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Arriving"
+      }
+    },
+    "/v1/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Departing"
+      }
+    },
+    "/v1/json/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Arriving"
+      }
+    },
+    "/v1/json/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Departing"
+      }
+    },
+    "/v1/json/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Departing"
+      }
+    },
+    "/v1/json/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Arriving"
+      }
+    },
+    "/v1/json/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Departing"
+      }
+    },
+    "/v1/json/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Arriving"
+      }
+    },
+    "/v1/jsonp/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Arriving"
+      }
+    },
+    "/v1/jsonp/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Departing"
+      }
+    },
+    "/v1/jsonp/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Departing"
+      }
+    },
+    "/v1/jsonp/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Arriving"
+      }
+    },
+    "/v1/jsonp/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Departing"
+      }
+    },
+    "/v1/jsonp/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Arriving"
+      }
+    },
+    "/v1/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Arriving"
+      }
+    },
+    "/v1/xml/flight/{carrier}/{flightnumber}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Arriving"
+      }
+    },
+    "/v1/xml/flight/{carrier}/{flightnumber}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "carrier",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "flightnumber",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byFlight_Departing"
+      }
+    },
+    "/v1/xml/from/{departureAirportCode}/departing/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Departing"
+      }
+    },
+    "/v1/xml/from/{departureAirportCode}/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Arriving"
+      }
+    },
+    "/v1/xml/from/{departureAirportCode}/to/{arrivalAirportCode}/departing/{year}/{month}/{day}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "departureAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byRoute_Departing"
+      }
+    },
+    "/v1/xml/to/{arrivalAirportCode}/arriving/{year}/{month}/{day}/{hourOfDay}": {
+      "parameters": [
+        {
+          "in": "path",
+          "name": "arrivalAirportCode",
+          "required": true,
+          "schema": {
+            "type": "string"
+          }
+        },
+        {
+          "in": "path",
+          "name": "month",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "year",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "day",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        },
+        {
+          "in": "path",
+          "name": "hourOfDay",
+          "required": true,
+          "schema": {
+            "format": "int32",
+            "type": "integer"
+          }
+        }
+      ],
+      "get": {
+        "parameters": [
+          {
+            "in": "query",
+            "name": "appId",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "appKey",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "codeType",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "in": "query",
+            "name": "extendedOptions",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response"
+          }
+        },
+        "operationId": "byZAirport_Arriving"
+      }
+    }
+  }
+}
