@@ -1,0 +1,19 @@
+{
+  "name": "flight2event",
+  "version": "1.0.0",
+  "description": "Download calendar event for flight number and date",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tinman6/flight2event.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tinman6/flight2event/issues"
+  },
+  "homepage": "https://github.com/tinman6/flight2event#readme"
+}
