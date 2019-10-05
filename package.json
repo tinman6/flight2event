@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tinman6/flight2event#readme",
   "dependencies": {
-    "ics": "2.16.0"
+    "ics": "2.16.0",
+    "swagger-client": "3.9.4"
   }
 }
