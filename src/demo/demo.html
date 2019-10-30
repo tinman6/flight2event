@@ -12,8 +12,8 @@
         var flight = flightData.data
         var cal = ics();
         var subject = `${flight.ticketHeader.carrier.fs}${flight.ticketHeader.flightNumber}: ${flight.departureAirport.fs}-${flight.arrivalAirport.fs}`
-        var description = `From: ${flight.departureAirport.name}: Terminal: ${flight.departureAirport.terminal}\nTo: ${flight.arrivalAirport.name} Terminal: ${flight.arrivalAirport.terminal}\nConfirmation: ${flightForm.bookingRef.value}`
-        cal.addEvent(subject, description, null, flight.departureAirport.date, flight.arrivalAirport.date)
+        var description = `From: ${flight.departureAirport.name}: Terminal: ${flight.departureAirport.terminal}\\nTo: ${flight.arrivalAirport.name} Terminal: ${flight.arrivalAirport.terminal}\\nConfirmation: ${flightForm.bookingRef.value}`
+        cal.addEvent(subject, description, null, flight.schedule.scheduledDepartureUTC, flight.schedule.scheduledArrivalUTC)
         cal.download("flight");
       }
     </script>
