@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Flight2Event</title>
+    <meta name="description" content="Download calendar event for flight number and date">
+    <script src="ics.min.js"></script>
+    <script src="FileSaver.min.js"></script>
+    <script type="text/javascript">      
+      function flight2event() {
+        var flightData = JSON.parse(flightForm.flightData.value)
+        var flight = flightData.data
+        var cal = ics();
+        var subject = `${flight.ticketHeader.carrier.fs}${flight.ticketHeader.flightNumber}: ${flight.departureAirport.fs}-${flight.arrivalAirport.fs}`
+        var description = `From: ${flight.departureAirport.name}: Terminal: ${flight.departureAirport.terminal}\nTo: ${flight.arrivalAirport.name} Terminal: ${flight.arrivalAirport.terminal}\nConfirmation: ${flightForm.bookingRef.value}`
+        cal.addEvent(subject, description, null, flight.departureAirport.date, flight.arrivalAirport.date)
+        cal.download("flight");
+      }
+    </script>
+  </head>
+
+  <body>
+    <p>Add an event to your calendar for your flight. I really don't know why airlines don't provide this in their confirmation emails...</p>
+   
+    <form id="flightForm">
+      TODO: cannot get fetch to work. Go to https://www.flightstats.com/v2/api-next/flight-tracker/U2/8549/2019/10/31 and paste the results:<br>
+      Flight JSON:<br>
+      <textarea name="flightData" cols="80" rows="5"></textarea><br><br>
+      <!--
+      Flight:<br>
+      <input type="text" name="flightNum"><br><br>
+      <Date:<br>
+      <input type="date" name="date"><br><br>-->
+      Booking reference:<br>
+      <input type="text" name="bookingRef"><br><br>
+      <button onclick="flight2event()">Download Calendar Event</button>
+    </form>
+
+  </body>
+</html> 
