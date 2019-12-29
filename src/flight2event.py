@@ -4,6 +4,7 @@
 import datetime
 
 from aadict import aadict
+from ics import Calendar, Event
 import requests
 from suds.client import Client  # suds-jurko
 
@@ -56,3 +57,29 @@ def getAirports(airline, flightno):
       'timezone': a.arrivalAirport.timeZoneRegionName
     }
   }
+
+
+def flight2event(airline, flightno, schedule, airport, reference=None):
+  schedule = aadict.d2ar(schedule)
+  airport = aadict.d2ar(airport)
+  name = '%s%s: %s-%s' % (airline, flightno,
+                          airport.origin.iata, airport.destination.iata)
+
+  origin = 'From: %s' % airport.origin.name
+  if airport.origin.terminal:
+    origin += ', Terminal: %s' % airport.origin.terminal
+  destination = 'To: %s' % airport.destination.name
+  if airport.destination.terminal:
+    destination += ', Terminal: %s' % airport.destination.terminal
+
+  description = '%s\n%s' % (origin, destination)
+  if reference:
+    description += '\nConfirmation: %s' % reference
+
+  c = Calendar()
+  e = Event(name=name,
+            begin=schedule.departureTime,
+            end=schedule.arrivalTime,
+            description=description)
+  c.events.add(e)
+  return str(c)
